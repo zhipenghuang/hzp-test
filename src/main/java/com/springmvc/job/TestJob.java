@@ -6,14 +6,14 @@ import org.springframework.stereotype.Component;
 @Component
 public class TestJob {
 
-    @Scheduled(cron = "*/3 * * * * *")
-    public void test() {
-        System.out.println("test executed ...");
-    }
-
-    @Scheduled(cron = "*/3 * * * * *")
-    public void test1() {
-        System.out.println("I love you ...");
-    }
+//    @Scheduled(cron = "*/3 * * * * *")
+//    public void test() {
+//        System.out.println("test executed ...");
+//    }
+//
+//    @Scheduled(cron = "*/3 * * * * *")
+//    public void test1() {
+//        System.out.println("I love you ...");
+//    }
 
 }
