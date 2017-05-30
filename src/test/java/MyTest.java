@@ -24,8 +24,8 @@ public class MyTest {
 	public void myTest(){
 		List<Localtion> all = myService.findAll(0L);
 		for (int i = 0; i <all.size() ; i++) {
-			System.out.println(all.get(i).toString()+"------------------------");
-		}                                                    
+			System.out.println(all.get(i).toString()+"==============");
+		}
 	}
 	
 	@Test
