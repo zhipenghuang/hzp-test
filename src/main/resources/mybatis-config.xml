@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+		<!-- 驼峰命名 -->
+		<setting name="mapUnderscoreToCamelCase" value="true" />
+		<!-- 当返回的字段为空的时候仍然返回字段名，false不返回 -->
+		<setting name="callSettersOnNulls" value="true"/>
+	</settings>
+	
+	<typeAliases>
+		<package name="com.springmvc.model" />
+	</typeAliases>
+</configuration>
