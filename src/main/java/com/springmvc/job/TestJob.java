@@ -8,7 +8,7 @@ public class TestJob {
 
 //    @Scheduled(cron = "*/3 * * * * *")
 //    public void test() {
-//        System.out.println("test executed ...");
+//        System.out.println("test executed ...hhahahah");
 //    }
 //
 //    @Scheduled(cron = "*/3 * * * * *")
