@@ -1,6 +1,9 @@
 package com.springmvc.service.impl;
 
 import java.util.List;
+
+import com.springmvc.mapper.UserMapper;
+import com.springmvc.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.github.pagehelper.PageHelper;
@@ -19,6 +22,9 @@ public class MyServiceImpl implements MyService {
 	private ChatBackgroundMapper chatBackgroundMapper;
 	@Autowired
 	private LocaltionMapper localtionMapper;
+	@Autowired
+	private UserMapper userMapper;
+
 
 	public PageDto getAllPic(PageDto pageDto) {
 		Integer pageSize = pageDto.getPageSize();
@@ -45,6 +51,13 @@ public class MyServiceImpl implements MyService {
 	public List<Localtion> findAll(Long id) {
 		List<Localtion> findAll = localtionMapper.findAll(id);
 		return findAll;
+	}
+
+	@Override
+	public User getUser(String name, String phone) {
+		User user = userMapper.getUser(name, phone);
+
+		return user;
 	}
 
 }

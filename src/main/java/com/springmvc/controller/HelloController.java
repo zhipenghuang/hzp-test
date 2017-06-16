@@ -51,4 +51,12 @@ public class HelloController {
         response.data = all;
         return response;
     }
+
+    @ResponseBody
+    @RequestMapping(value = "/getUser", method = RequestMethod.GET)
+    public Response getUser() throws ServiceException {
+        Response response = new Response();
+        response.data=myServie.getUser("hzp","18200299031");
+        return response;
+    }
 }

@@ -79,4 +79,8 @@
       phone = #{phone,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
+
+  <select id="getUser" parameterType="hashmap" resultType="com.springmvc.model.User">
+    select * from User where name = #{name} and phone = #{phone}
+  </select>
 </mapper>
