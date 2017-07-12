@@ -1,11 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.cddang.test</groupId>
-	<artifactId>hzp-test2</artifactId>
+	<groupId>com.hzp.test</groupId>
+	<artifactId>hzp-test</artifactId>
 	<packaging>pom</packaging>
 	<version>1.0</version>
-	<name>hzp-test2 Maven Webapp</name>
+	<name>hzp-test Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<properties>
 		<springVersion>4.3.4.RELEASE</springVersion>
@@ -190,6 +190,12 @@
 			<artifactId>quartz</artifactId>
 			<version>2.3.0</version>
 		</dependency>
+		<dependency>
+			<groupId>com.baomidou</groupId>
+			<artifactId>mybatis-plus</artifactId>
+			<version>2.0.9</version>
+			<type>pom</type>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -209,7 +215,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
-		<finalName>hzp-test2</finalName>
+		<finalName>hzp-test</finalName>
 	</build>
 
 </project>
