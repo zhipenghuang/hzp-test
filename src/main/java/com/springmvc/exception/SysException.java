@@ -3,14 +3,14 @@ package com.springmvc.exception;
 /**
  * @Description: 系统异常
  * @ClassName: sysException
- * @author 
- * @date 
+ * @author
+ * @date
  *
  */
 public class SysException extends BaseException {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = -6878142870884828535L;
 

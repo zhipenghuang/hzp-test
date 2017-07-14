@@ -1,23 +1,23 @@
 package com.springmvc.exception;
 
 /**
- * @Description: ³éÏóºÍÀ©Õ¹ExceptionĞÅÏ¢
+ * @Description: æŠ½è±¡å’Œæ‰©å±•Exceptionä¿¡æ¯
  * @ClassName: ExceptionScalable
  * @author
- * @date 2016Äê9ÔÂ14ÈÕ ÏÂÎç8:30:04
+ * @date 2016å¹´9æœˆ14æ—¥ ä¸‹åˆ8:30:04
  *
  */
 public interface ExceptionScalable{
 
 	/**
-	 * ´íÎó¶ÔÏó
+	 * é”™è¯¯å¯¹è±¡
 	 * @return
 	 */
 	ErrorCode getError();
 
 	/**
-	 * ÒıÆğÖ´ĞĞÒì³£µÄÊı¾İ, ÈçÊäÈëÊı¾İ£¬»òÖ´ĞĞÓï¾äµÈ
+	 * å¼•èµ·æ‰§è¡Œå¼‚å¸¸çš„æ•°æ®, å¦‚è¾“å…¥æ•°æ®ï¼Œæˆ–æ‰§è¡Œè¯­å¥ç­‰
 	 * @return
-     */
+	 */
 	Object getData();
 }

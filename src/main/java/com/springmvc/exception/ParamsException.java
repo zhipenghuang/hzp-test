@@ -1,16 +1,16 @@
 package com.springmvc.exception;
 
 /**
- * @Description: 
+ * @Description:
  * @ClassName: ParamsException
  * @author
- * @date 
+ * @date
  *
  */
 public class ParamsException extends BaseException {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 7137006668984255381L;
 
@@ -26,5 +26,5 @@ public class ParamsException extends BaseException {
 		super(error);
 	}
 
-	
+
 }

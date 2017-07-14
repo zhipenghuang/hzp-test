@@ -1,16 +1,16 @@
 package com.springmvc.exception;
 
 public enum MyErrorCode implements ErrorCode{
-	
-	SUCCESS(0, "操作成功!"), 
-	REQ_ERROR(400, "请求错误!"), 
-	SERVICE_ERROR(500, "内部服务错误!"), 
+
+	SUCCESS(0, "操作成功!"),
+	REQ_ERROR(400, "请求错误!"),
+	SERVICE_ERROR(500, "内部服务错误!"),
 	AUTH_FAIL(401, "授权失败或超时,请登录访问!"),
 	TIMEOUT(408, "请求超时!"),
 	REQ_PARAMS_ERROR(406, "请求参数错误!"),
-    ONE_LOGIN(420, "您已经在另一台手机登录"),;
-	
-	
+	ONE_LOGIN(420, "您已经在另一台手机登录"),;
+
+
 	private Integer code;
 	private String message;
 

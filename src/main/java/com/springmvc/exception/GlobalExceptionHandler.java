@@ -21,7 +21,7 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * @Description: 统一异常处理
  * @ClassName: GlobalExceptionHandler
- * @author 
+ * @author
  * @date 2016年9月13日 上午10:42:11
  *
  */
@@ -41,7 +41,7 @@ public class GlobalExceptionHandler {
 		log.error("MethodArgumentTypeMismatchException:" + e.getMessage(), e);
 		return Response.error(400);
 	}
-	
+
 	/**
 	 * Http请求时，参数异常   400
 	 * @param
@@ -54,7 +54,7 @@ public class GlobalExceptionHandler {
 		log.error("ServletException:" + e.getMessage(), e);
 		return Response.error(400);
 	}
-	
+
 	/**
 	 * 服务器内部出错	500
 	 * @param
@@ -67,7 +67,7 @@ public class GlobalExceptionHandler {
 		log.error("SysException:" + e.getData(), e);
 		return new Response(e.getError().getCode(),e.getError().getMessage()); //Response.error(500);
 	}
-	
+
 	/**
 	 * 请求超时		408
 	 * @param
@@ -80,7 +80,7 @@ public class GlobalExceptionHandler {
 		log.error("RequestTimeOutException:" + e.getMessage(), e);
 		return Response.error(408);
 	}
-	
+
 	/**
 	 * 参数出错	406
 	 * @param
@@ -94,7 +94,7 @@ public class GlobalExceptionHandler {
 		return new Response(406, e.getData()); //Response.error(406);
 	}
 
-	
+
 	/**
 	 * 业务统一异常处理
 	 * @param request
@@ -102,13 +102,13 @@ public class GlobalExceptionHandler {
 	 * @return
 	 */
 	@ExceptionHandler(BaseException.class)
-    @ResponseBody
-    public Response BaseException(HttpServletRequest request, BaseException e) {
+	@ResponseBody
+	public Response BaseException(HttpServletRequest request, BaseException e) {
 		printRequest(request);
 		log.error("BaseException:" + e.getMessage() + " errorCode:" + e.getError().getCode() + "[" +e.getError().getMessage() + "]" ,e);
-        return new Response(e.getError().getCode(),e.getError().getMessage());
-    }
-	
+		return new Response(e.getError().getCode(),e.getError().getMessage());
+	}
+
 	/**
 	 * 统一未知异常处理		500
 	 * @param request
@@ -116,13 +116,13 @@ public class GlobalExceptionHandler {
 	 * @return
 	 */
 	@ExceptionHandler(Exception.class)
-    @ResponseBody
-    public Response handleGlobal(HttpServletRequest request, Exception e) {
+	@ResponseBody
+	public Response handleGlobal(HttpServletRequest request, Exception e) {
 		printRequest(request);
 		log.error("Exception:" + e.getMessage(), e);
-        return new Response(500);
-    }
-	
+		return new Response(500);
+	}
+
 	/**
 	 * 请求参数格式异常处理	406
 	 * @param exception
@@ -152,7 +152,7 @@ public class GlobalExceptionHandler {
 		log.error("BindException:" + exception.getMessage(), exception);
 		return bindParamValid(result);
 	}
-	
+
 	/**
 	 * 数据绑定参数校验
 	 * @param result
@@ -167,17 +167,17 @@ public class GlobalExceptionHandler {
 				map.put("errorMsg", error.getDefaultMessage());
 				invalidArguments.add(map);
 			}
-		} 
+		}
 		return new Response(406);
 	}
-	
+
 	/**
 	 * 输出异常请求信息
 	 * @param request
 	 */
 	public void printRequest(HttpServletRequest request) {
 		log.error("请求的URL:" + request.getRequestURL().toString());
-		
+
 		StringBuffer headerStr = new StringBuffer("请求头:");
 		StringBuffer paramStr = new StringBuffer("请求体:");
 		Enumeration<String> headers = request.getHeaderNames();
@@ -186,7 +186,7 @@ public class GlobalExceptionHandler {
 			headerStr.append(header + "=" + request.getHeader(header) + "\n");
 		}
 		log.error(headerStr.toString() + "\n");
-		
+
 		Enumeration<String> params = request.getParameterNames();
 		while (params.hasMoreElements()) {
 			String param = (String) params.nextElement();

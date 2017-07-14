@@ -1,27 +1,27 @@
 package com.springmvc.exception;
 
 /**
- * @Description: ´íÎó·µ»ØÂë½Ó¿Ú
+ * @Description: é”™è¯¯è¿”å›ç æ¥å£
  * @ClassName: ErrorCode
- * @author 
- * @date 2016Äê9ÔÂ14ÈÕ ÏÂÎç8:29:26
+ * @author
+ * @date 2016å¹´9æœˆ14æ—¥ ä¸‹åˆ8:29:26
  *
  */
 public interface ErrorCode {
-	
+
 	/**
-	 * ·µ»ØÂë
+	 * è¿”å›ç 
 	 * @return
 	 */
 	int getCode();
 
 	/**
-	 * Òì³£ĞÅÏ¢, Ô´×Ô{@link Throwable#getMessage()}
-	 * 
+	 * å¼‚å¸¸ä¿¡æ¯, æºè‡ª{@link Throwable#getMessage()}
+	 *
 	 * @return
 	 */
 	String getMessage();
-	
+
 	void setMessage(String msg);
 
 }
