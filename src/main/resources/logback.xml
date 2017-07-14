@@ -19,7 +19,7 @@
         <!-- 对日志进行格式化 -->  
         <encoder>  
             <pattern>%d{HH:mm} [%-5level] %logger -%msg%n</pattern>
-            <charset>GBK</charset> <!-- 此处设置字符集 -->
+            <charset>UTF-8</charset> <!-- 此处设置字符集 -->
         </encoder>  
     </appender>  
       
