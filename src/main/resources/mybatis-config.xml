@@ -10,7 +10,7 @@
 		<setting name="callSettersOnNulls" value="true"/>
 	</settings>
 	
-	<typeAliases>
-		<package name="com.springmvc.model" />
-	</typeAliases>
+	<!--<typeAliases>-->
+		<!--<package name="com.springmvc.model" />-->
+	<!--</typeAliases>-->
 </configuration>
