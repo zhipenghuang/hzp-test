@@ -2,7 +2,9 @@ package com.springmvc.service.impl;
 
 import java.util.List;
 
+import com.springmvc.mapper.TestMapper;
 import com.springmvc.mapper.UserMapper;
+import com.springmvc.model.Test;
 import com.springmvc.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,6 +26,8 @@ public class MyServiceImpl implements MyService {
 	private LocaltionMapper localtionMapper;
 	@Autowired
 	private UserMapper userMapper;
+	@Autowired
+	private TestMapper testMapper;
 
 
 	public PageDto getAllPic(PageDto pageDto) {
@@ -58,6 +62,18 @@ public class MyServiceImpl implements MyService {
 		User user = userMapper.getUser(name, phone);
 
 		return user;
+	}
+
+	@Override
+	public Test getTest(Long id) {
+		Test test = testMapper.selectByPrimaryKey(id);
+		return test;
+	}
+
+	@Override
+	public List<Test> getAll(Long id) {
+		List all = testMapper.getAll(id);
+		return all;
 	}
 
 }

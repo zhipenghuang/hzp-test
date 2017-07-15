@@ -24,39 +24,47 @@ import com.wordnik.swagger.annotations.ApiParam;
 @RequestMapping("/management")
 public class HelloController {
 
-    @Autowired
-    private MyService myServie;
+	@Autowired
+	private MyService myServie;
 
-    @ResponseBody
-    @RequestMapping(value = "/world/{id}", method = RequestMethod.GET)
-    @ApiOperation(value = "根据id查询图片", httpMethod = "GET", response = ChatBackground.class, notes = "根据id查询图片")
-    public Response HelloWorld(@ApiParam(required = true, name = "id", value = "id") @PathVariable Long id,
-                               Map<String, Object> map) throws ServiceException {
-        Response response = new Response();
-        String string = RedisUtils.getJedis().get("name");
-        response.data = string;
-        return response;
-    }
+	@ResponseBody
+	@RequestMapping(value = "/world/{id}", method = RequestMethod.GET)
+	@ApiOperation(value = "根据id查询图片", httpMethod = "GET", response = ChatBackground.class, notes = "根据id查询图片")
+	public Response HelloWorld(@ApiParam(required = true, name = "id", value = "id") @PathVariable Long id,
+	                           Map<String, Object> map) throws ServiceException {
+		Response response = new Response();
+		String string = RedisUtils.getJedis().get("name");
+		response.data = string;
+		return response;
+	}
 
-    @RequestMapping(value = "/hello", method = RequestMethod.GET)
-    public String getPicPage() throws ServiceException {
-        return "secure/HelloWorld";
-    }
+	@RequestMapping(value = "/hello", method = RequestMethod.GET)
+	public String getPicPage() throws ServiceException {
+		return "secure/HelloWorld";
+	}
 
-    @ResponseBody
-    @RequestMapping(value = "/location", method = RequestMethod.GET)
-    public Response getLocation() throws ServiceException {
-        Response response = new Response();
-        List<Localtion> all = myServie.findAll(0L);
-        response.data = all;
-        return response;
-    }
+	@ResponseBody
+	@RequestMapping(value = "/location", method = RequestMethod.GET)
+	public Response getLocation() throws ServiceException {
+		Response response = new Response();
+		List<Localtion> all = myServie.findAll(0L);
+		response.data = all;
+		return response;
+	}
 
-    @ResponseBody
-    @RequestMapping(value = "/getUser", method = RequestMethod.GET)
-    public Response getUser() throws ServiceException {
-        Response response = new Response();
-        response.data=myServie.getUser("hzp","18200299031");
-        return response;
-    }
+	@ResponseBody
+	@RequestMapping(value = "/getUser", method = RequestMethod.GET)
+	public Response getUser() throws ServiceException {
+		Response response = new Response();
+		response.data = myServie.getUser("hzp", "18200299031");
+		return response;
+	}
+
+	@ResponseBody
+	@RequestMapping(value = "/test", method = RequestMethod.GET)
+	public Response test() throws ServiceException {
+		Response response = new Response();
+		response.data = myServie.getAll(2L);
+		return response;
+	}
 }
